@@ -1,0 +1,41 @@
+﻿<html>
+
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	function readbuf()
+	{
+	clipboardData.getData("Text");
+	a.value = clipboardData.getData("Text");
+	}
+
+	function send()
+	{
+	var s = String(a.value);
+	s = s.replace(/0006/g,"");
+	s = s.substr(0, 2)+":"+s.substr(2, 2)+":"+s.substr(4, 2)+":"+s.substr(6, 2)+":"+s.substr(8, 2)+":"+s.substr(10, 2);
+	a.value = s;
+	document.getElementById('a').select();
+
+	window.clipboardData.setData('text', s);
+
+	}
+
+	$(window).keydown(function(event){
+	//ловим событие нажатия клавиши
+	if(event.keyCode == 13) {
+		send();	
+	}
+	});
+	
+</script>
+</head>
+
+<body onLoad="readbuf()">
+<p>Значение:
+<input id="a" size=20></p>
+<input type="button" onclick="send()" value="Преобразовать">
+</body>
+
+</html>

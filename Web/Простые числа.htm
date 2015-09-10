@@ -1,0 +1,41 @@
+﻿<html>
+<head>
+<title>My First Script</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+var isSimple = function(b){
+	for (var x = 2; x < b; x++){
+		if (b%x == 0){
+			return false;
+			break;
+		}
+	}
+	if (b == 1) return false;
+	return true;
+}
+
+
+//alert("sdf");
+
+var a = Number(prompt("Введите номер простого числа", ""));
+
+var myNum = 0;
+var i = 1;
+
+
+while(i <= a){
+	myNum++;
+	if (isSimple(myNum)) {
+		i++;
+		//document.write(myNum+' ');
+	}
+}
+
+document.write(myNum);
+
+</script>
+</body>
+</html>

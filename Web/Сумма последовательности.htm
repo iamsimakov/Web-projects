@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+<title>My First Script</title>
+</head>
+
+<body>
+<script type="text/javascript">
+var a = Number(prompt("Введите первое число А, которое -215 < A < B < 215", ""));
+var b = Number(prompt("Введите второе число B, которое -215 < A < B < 215", ""));
+if (a>(-215) && b>a && 215>b){
+	var sum = 0;
+	var i = a;
+	while (i <= b){
+		sum += i;
+		i++;
+	}
+	alert(sum);
+}
+else alert("Условие не соблюдено, обновите страницу");
+</script>
+</body>
+</html>

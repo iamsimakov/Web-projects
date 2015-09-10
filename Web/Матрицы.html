@@ -1,0 +1,99 @@
+﻿<html>
+<head>
+<title>Графы</title>
+</head>
+
+<body>
+<!--в след строке делаем кнопку и на нее вешаем вызов функции schet()-->
+<input type='button' value='Посчитать' name='button' onclick='schet()'> 
+<!--далее делаем input из кот. будем читать связность-->
+Связность <input type='text' name='svyaznost'>
+
+<script type="text/javascript">
+
+var schet = function(){	
+	b = Number(document.getElementsByName('svyaznost')[0].value); //читаем связность и пишем в b
+	
+	var arr = new Array(); //объявляем массив
+	for (i = 0; i < a; i++){  // начинаем цикл кот. читает из таблицу input и пишет в двумерный массив
+		arr[i] = new Array();  // пишем массив в первый элемент, получаем массив массивов
+		for (j = 0; j < a; j++){
+			arr[i][j] = Number(document.getElementsByName(String(i)+String(j))[0].value); 
+			//пишем число в массив			
+		}
+	}
+	
+	document.body.insertAdjacentHTML('beforeend', "Исходная матрица: <br>"); //дописываем под таблицу
+	vivod(arr); //вызываем функцию, передав ей массив arr
+	document.body.insertAdjacentHTML('beforeend', "Связность "+ b + " = " +svyaz(arr, b) + "<br><br>");
+	// вычисляем связность и выводим рез-т на страницу
+	
+	while (svyaz(arr, b) && b>1){ //цикл 
+		arr = cut(arr);  //вызываем функцию в кот. будем отрезать от массива последний столбец и строку
+		b--;  //уменьшаем связность согласно алгоритма Клейтмана
+		vivod(arr);  // вызываем функцию в кот. выводим массив
+		document.body.insertAdjacentHTML('beforeend', "След. шаг связность "+ b + " = " +svyaz(arr, b)+ "<br><br>");
+		//вычисляем связность и выводим
+	}
+		
+}
+
+var cut = function(arr){  // функция удаления последней строки и столбца
+	var i,j;
+	arr.splice(arr.length-1, 1);  //удал. нижнюю строку
+	for (i = 0; i < arr.length; i++){  //перебираем все строки
+		arr[i].splice(arr[i].length-1, 1);	//удал. последний элемент
+	}
+	
+	return arr;  //в качестве рез-та возвращаем новый массив
+}
+
+var vivod = function(arr){  //функция выводит массив 
+	var i,j;
+	for (i = 0; i < arr.length; i++){  //начинаем строку
+		for (j = 0; j < arr[i].length; j++){  // выводим элементы строки
+			document.body.insertAdjacentHTML('beforeend', arr[i][j]+" "); 
+		}
+		document.body.insertAdjacentHTML('beforeend', "<br>"); // в конце строки - перевод строки
+	}
+}
+
+var svyaz = function(arr, sv){  //считаем связность входного графа заданного матрицей
+	var i,j;   //счетчики
+	var result = true;  //объявляем переменную в кот. будем писать рез-т
+	for (i = 0; i < arr.length; i++){
+		var sum = 0;  //сумма всех единиц в каждой строке должна быть больше или равна связности
+		for (j = 0; j < arr[i].length; j++){
+			sum += arr[i][j];  //суммируем единицы в строке
+		}
+		if (sum < sv) {  //если сумма меньше заданной связности то рез-т - ложь
+				result = false;  
+				break;				
+			}
+	}
+	return result;  //возвращаем рез-т
+}
+
+
+var a = Number(prompt("Введите количество вершин", ""));  //старт скрипта, окно кот. появл. при загрузке
+var b;  // сюда будем писать ту связность кот. будем проверять
+
+var i, j;  // счетчики в циклах
+
+document.write("<table>"); //начинаем рисовать таблицу из input-объектов
+for (i = 0; i < a; i++){
+	document.write("<tr>");
+		for (j = 0; j < a; j++){    // каждому input присваиваем имя в виде двух цифр
+			document.write("<td>");  // каждая из кот. его координаты
+			document.write("<input type='text' name="+String(i)+String(j)+" size='10'>"); 
+			document.write("</td>");
+		}
+	document.write("</tr>");
+}
+
+document.write("</table>");
+
+</script>
+
+</body>
+</html>
