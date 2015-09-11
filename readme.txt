@@ -14,6 +14,7 @@ column, which contains the time and the top line, which contains day in the mont
 from PHP.
 **************
 
+
 == Calc_PHP
 **************
 Арифметические действия на PHP
@@ -21,12 +22,16 @@ from PHP.
 Arithmetic operations in PHP
 **************
 
+
+
 == List_jQuery_php
 **************
 Пример выплывающего списка на jQuery + php
 ------------------
 An example of a popup list with jQuery + php
 **************
+
+
 
 == MAC_js
 **************
@@ -37,6 +42,8 @@ The user inserts the mac address without separating ":" in the text box, clicks 
 and mac-address group is divided by 2 characters after the ":". The JavaScript-based.
 **************
 
+
+
 == Table_js_jQurey
 **************
 Пример, реализации таблицы для сохранения заметок прямо в файле HTML на базе JS. 
@@ -46,12 +53,16 @@ Example, the implementation table to save notes directly in the HTML file based 
 But there are more bugs. Test example.
 **************
 
+
+
 == Time_php
 **************
 Пример отображения времени на PHP на странице.
 -------------------
 An example of a time display on the PHP page.
 **************
+
+
 
 == Web
 **************
