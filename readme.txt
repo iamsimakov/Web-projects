@@ -84,3 +84,5 @@ An example of a time display on the PHP page.
  - The sum of the sequence
  An example of finding a sequence of numbers in the specified range from one number to the second.
 **************
+
++ немного HTML
