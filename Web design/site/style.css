@@ -1,0 +1,114 @@
+@import url("reset.css");
+
+html{
+	background: url(images/v2-back.png) fixed center center;
+	min-height: 100%;
+}
+
+body{
+	background: url(images/v2-body-back.png) no-repeat center center;
+	font-family: Ariston, Georgia, Sans-serif;
+	background-size: 100% 95%;
+	color: #777777;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+a.head_links{
+	text-decoration: none;
+	outline: none;
+	font-family: Georgia;
+	font-style: Italic;
+	font-size: 12px;
+	color: #737373;
+}
+
+a.head_links:hover{
+	text-decoration: underline;
+	outline: none;
+	font-family: Georgia;
+	font-style: Italic;
+	font-size: 12px;
+	color: #737373;
+}
+
+a.left_links{
+	text-decoration: none;
+	outline: none;
+	font-family: ProximaNova;
+	font-style: Regular;
+	font-size: 12px;
+	color: red;
+}
+
+a.left_links:hover{
+	text-decoration: underline;
+	outline: none;
+	font-family: ProximaNova;
+	font-style: Regular;
+	font-size: 12px;
+	color: red;
+}
+
+img {
+	vertical-align	: middle;
+}
+
+p.content_article{
+	font: ProximaNova, Arial;
+	font-style: Regular;
+	font-size: 12px;
+	color: #777777;
+	text-align: justify;
+}
+
+p.georgia_label{
+	text-decoration: none;
+	outline: none;
+	font-family: Georgia;
+	font-style: Italic;
+	font-size: 12px;
+	color: #737373;
+	text-align: center;
+}
+
+p.spacer{
+	text-align: center;
+}
+
+table{
+	width: 70%;
+	margin: auto;
+}
+
+td {
+	padding: 5px;
+}
+
+ul {
+	text-align: center;
+    margin: 0; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+}
+ul li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 10px; /* Отступ слева */
+    margin-left: 10px; /* Отступ справа */
+    padding: 8px; /* Поля вокруг текста */
+}
+
+div#logotype{
+	font: Ariston, Georgia;
+	font-style: Italic;
+	font-size: 36px;
+	color: #555555;
+	text-align: center;
+}
+
+div#logotype_desc{
+	font: ProximaNova, Arial;
+	font-style: Italic;
+	font-size: 12px;
+	color: #919191;
+	text-align: center;
+}
